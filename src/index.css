@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f8f9fa;
+  --card: #ffffff;
+  --ink: #0f1111;
+  --mute: #565959;
+  --line: #d5dbdb;
+  
+  /* Amazon Web Palette: Light Theme + FF9900 */
+  --amazon-orange: #FF9900;
+  --amazon-orange-hover: #e88b00;
+  --amazon-orange-light: #fff8e7;
+  --amazon-navy: #131921;
+  --amazon-dark: #232f3e;
+  
+  /* Accent tokens */
+  --pu: #534ab7;
+  --pub: #f3f2ff;
+  --bl: #007185;
+  --blb: #eef6f8;
+  --te: #FF9900;
+  --teb: #fff8e7;
+  --am: #b12704;
+  --amb: #fff1ed;
+  --gr: #067d62;
+  --grb: #eaf6f3;
+  --re: #ba0933;
+  --reb: #fdf2f4;
+  --sky: #f0f4f8;
+}
+
+body {
+  background-color: #f7f9fa;
+  color: #0f1111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Amazon-styled focus ring */
+*:focus-visible {
+  outline: 3px solid #FF9900;
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

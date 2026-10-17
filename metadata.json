@@ -1,0 +1,6 @@
+{
+  "name": "OmniCare Mesh",
+  "description": "Consent-first family check-in orchestrator built as a self-hosted MCP server with Alexa+ (simulated), elder voice consent, undo, and hash-chained audit logging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

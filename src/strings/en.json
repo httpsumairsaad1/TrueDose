@@ -1,0 +1,131 @@
+{
+  "app": {
+    "title": "TrueDose",
+    "subtitle": "Simulation Stage",
+    "tagline": "Consent-first family check-in orchestrator",
+    "disclaimer": "Alexa+ is simulated. MCP server is real. Mock data. Not a medical device.",
+    "badges": {
+      "simulated": "Alexa+ (simulated)",
+      "mock": "MOCK",
+      "live": "LIVE",
+      "replay": "REPLAY"
+    }
+  },
+  "scenarios": {
+    "s1": {
+      "id": "s1",
+      "number": 1,
+      "title": "Morning pill",
+      "duration": "25s",
+      "summary": "Grandma logs her morning dose. Alexa+ confirms quietly; family is not bothered."
+    },
+    "s2": {
+      "id": "s2",
+      "number": 2,
+      "title": "Missed dose ladder",
+      "duration": "40s",
+      "summary": "Gentle reminder to Grandma first. Calm check-in to Daughter only after grace period. Never emergency calls."
+    },
+    "s3": {
+      "id": "s3",
+      "number": 3,
+      "title": "Consent-gated gate check",
+      "duration": "45s",
+      "summary": "Daughter asks to check the gate. Pipeline pauses for Grandma's voice consent before returning status."
+    },
+    "s4": {
+      "id": "s4",
+      "number": 4,
+      "title": "Lock with confirm & undo",
+      "duration": "45s",
+      "summary": "Physical action requires confirmation and maintains an active 60-second undo window."
+    },
+    "s5": {
+      "id": "s5",
+      "number": 5,
+      "title": "No grant & voice revoke",
+      "duration": "35s",
+      "summary": "Default deny on unauthorized check. Grandma revokes access at any time with immediate effect."
+    }
+  },
+  "messages": {
+    "grandmaHeader": "Grandma",
+    "grandmaRole": "Elder (Voice)",
+    "daughterHeader": "Daughter",
+    "daughterRole": "Caregiver (SMS)",
+    "emptyPrompt": "Press Play to see the first message.",
+    "typing": "Alexa+ is replying...",
+    "delivered": "Delivered",
+    "noMessageNotice": "No message sent. Nothing needed family's attention."
+  },
+  "consent": {
+    "question": "Allow your daughter to check the gate?",
+    "yesLabel": "Yes, for 24 hours",
+    "noLabel": "No, not now",
+    "pendingToDaughter": "Grandma needs to say yes first.",
+    "grantedToDaughter": "Grandma said yes. The gate is locked.",
+    "declinedToDaughter": "Grandma chose not to share that right now.",
+    "blockedByDefault": "I can't share that without Grandma's permission. Want me to ask her?",
+    "confirmation": "Lock the front gate now? Reply yes to confirm.",
+    "undoOffer": "Done. You can undo this for 60 seconds.",
+    "undoExpired": "The undo window has ended.",
+    "revokeDone": "Done. She can no longer see that.",
+    "nothingToRevoke": "There's nothing to stop sharing right now.",
+    "reminderToGrandma": "Friendly reminder: this morning's pill isn't logged yet.",
+    "messageToDaughter": "Grandma hasn't logged this morning's pill yet. This is just a check-in, not an emergency.",
+    "doseAlreadyLogged": "Already logged at 8:02.",
+    "consentTimeout": "Grandma hasn't answered yet. I can ask again later."
+  },
+  "controlPanel": {
+    "title": "Who can see what",
+    "empty": "No active grants. All elder data is private.",
+    "revokeBtn": "Revoke",
+    "scopeDose": "Medication status",
+    "scopeGate": "Gate status",
+    "scopeLock": "Gate lock action"
+  },
+  "pipeline": {
+    "nodes": {
+      "msgIn": "Message in",
+      "intent": "Intent",
+      "mcpCall": "MCP call",
+      "consent": "Consent",
+      "service": "Service",
+      "audit": "Audit",
+      "replyOut": "Reply out"
+    }
+  },
+  "trace": {
+    "plainView": "Plain",
+    "devView": "Developer",
+    "verifyBtn": "Verify chain",
+    "tamperBtn": "Tamper test",
+    "downloadJson": "Export JSON",
+    "chainIntact": "Chain intact: all blocks cryptographically verified",
+    "chainTampered": "Tamper detected at block #{index}: hash mismatch!",
+    "resetChain": "Restore log"
+  },
+  "transport": {
+    "play": "Play",
+    "pause": "Pause",
+    "next": "Next",
+    "back": "Back",
+    "reset": "Reset",
+    "playAgain": "Play again",
+    "soundOn": "Sound On",
+    "soundOff": "Muted",
+    "captionsOn": "Captions",
+    "speed": "Speed",
+    "skipTime": "Skip time"
+  },
+  "overlays": {
+    "startTitle": "TrueDose",
+    "startLine": "Grandma stays in charge. Watch how.",
+    "startWithSound": "Start demo (with sound)",
+    "startSilent": "Start silent",
+    "skipIntro": "Explore stage",
+    "privacyReceiptTitle": "Privacy & Action Receipt",
+    "tryToBreakIt": "Try to break it",
+    "helpTitle": "Simulation Stage Guide"
+  }
+}

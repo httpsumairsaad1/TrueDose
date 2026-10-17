@@ -1,0 +1,8 @@
+# Friction Log — OmniCare Mesh Development
+
+| Task | Steps Taken | Expected vs. Actual | Severity | Workaround / Fix | Suggestion |
+|---|---|---|---|---|---|
+| **Audio autoplay in browsers** | Triggered speech synthesis and chimes on scenario start | **Expected:** Voice plays immediately. <br>**Actual:** Modern browsers block Web Audio and Speech without direct prior user gesture. | High | Created an initial **Start Overlay** with explicit "Start with sound" and "Start silent" buttons. | Always require an onboarding tap before audio playback in web simulations. |
+| **Back beat timeline scrubbing** | User pressed Back key to rewind one step | **Expected:** Pure replay without re-executing server side effects. <br>**Actual:** Re-calling tools could create duplicate doses or double-locks. | Medium | Store historical emitted event sequence in memory and replay from sequence 0 up to target beat $N$. | Emphasize pure reducer state machines for interactive traces. |
+| **Tamper test visualization** | User clicks "Tamper test" to modify an audit log entry | **Expected:** Clear visual distinction between valid green blocks and broken red chain. <br>**Actual:** Initial subtle borders were difficult to spot on lower contrast screens. | Low | Added full-width red glow ring, warning icon, and explicit block index pointer in verification status. | Always pair status colors with unambiguous text and icons. |
+| **Streamable HTTP proxy buffering** | Sending real-time SSE updates | **Expected:** Instant packet delivery. <br>**Actual:** Express / Vite dev server buffered small chunks. | Medium | Added explicit `res.flushHeaders()` and `Connection: keep-alive` on `/api/sim/stream`. | Document flushing requirements in Streamable HTTP guides. |
