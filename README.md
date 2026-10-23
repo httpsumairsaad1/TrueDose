@@ -1,4 +1,4 @@
-# OmniCare Mesh
+# TrueDose
 
 > **Consent-first family check-in orchestrator**, built as a self-hosted Model Context Protocol (MCP) server and demonstrated through a single web page called the **Simulation Stage**.
 >
@@ -9,7 +9,7 @@
 
 ## 1. Concept & Story
 
-Most eldercare technologies prioritize giving caregivers *more surveillance* (continuous video, location tracking, automated alerts). **OmniCare Mesh** turns this model upside down: **the elder stays in complete control**.
+Most eldercare technologies prioritize giving caregivers *more surveillance* (continuous video, location tracking, automated alerts). **TrueDose** turns this model upside down: **the elder stays in complete control**.
 
 ### The Story
 1. **Calm Daily Check-ins:** Grandma says *"Alexa, I took my morning pill."* The next day she forgets and receives a gentle, private reminder first.
@@ -45,7 +45,7 @@ Most eldercare technologies prioritize giving caregivers *more surveillance* (co
                           ▼
  Express + TypeScript Backend (/mcp & /api/sim/*)
  +---------------------------------------------------------------+
- | OmniCare MCP Server (Spec: 2025-11-25)                        |
+ | TrueDose MCP Server (Spec: 2025-11-25)                        |
  | Tools: log_dose, get_dose_status, request_access,            |
  | grant_or_deny_access, revoke_access, check_gate_status,       |
  | lock_gate, undo_last_action, get_audit_log, escalation_policy |

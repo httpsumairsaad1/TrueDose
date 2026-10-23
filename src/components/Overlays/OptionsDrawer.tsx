@@ -12,7 +12,7 @@ import {
   Sparkles,
   Lock
 } from 'lucide-react';
-import { OmniCareMcpServer } from '../../mcp/server';
+import { TrueDoseMcpServer } from '../../mcp/server';
 import { verifyAuditChain } from '../../mcp/audit';
 
 interface OptionsDrawerProps {
@@ -49,7 +49,7 @@ export const OptionsDrawer: React.FC<OptionsDrawerProps> = ({
   const [drillOutput, setDrillOutput] = React.useState<string | null>(null);
 
   const runQuickDrill = async (drillType: string) => {
-    const testMcp = new OmniCareMcpServer();
+    const testMcp = new TrueDoseMcpServer();
     if (drillType === 'unauthorized') {
       const res = await testMcp.callTool('check_gate_status', {}, 'caregiver');
       setDrillOutput(`[Drill 1 - Default Deny]: Result: ${res.status.toUpperCase()}. Server replied: "${res.speakable}" (Zero elder data disclosed)`);

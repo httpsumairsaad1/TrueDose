@@ -1,17 +1,17 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { OmniCareMcpServer } from './src/mcp/server.ts';
+import { TrueDoseMcpServer } from './src/mcp/server.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(express.json());
 
-const mcpServer = new OmniCareMcpServer();
+const mcpServer = new TrueDoseMcpServer();
 
 // Health check
 app.get('/api/health', (_req: Request, res: Response) => {
@@ -76,9 +76,9 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, () => {
-    console.log(`TrueDose Simulation Stage running at http://localhost:${PORT}`);
-    console.log(`Streamable HTTP MCP Endpoint active at http://localhost:${PORT}/mcp`);
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`TrueDose Simulation Stage running at http://0.0.0.0:${PORT}`);
+    console.log(`Streamable HTTP MCP Endpoint active at http://0.0.0.0:${PORT}/mcp`);
   });
 }
 

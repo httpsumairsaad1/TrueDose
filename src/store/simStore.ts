@@ -15,7 +15,7 @@ import {
   ToolCallLog,
   TransportState,
 } from '../types';
-import { OmniCareMcpServer } from '../mcp/server';
+import { TrueDoseMcpServer } from '../mcp/server';
 import { SimHost, BeatAction } from '../mcp/simHost';
 import { verifyAuditChain } from '../mcp/audit';
 import { soundEngine } from '../audio/sound';
@@ -107,7 +107,7 @@ export function useSimEngine() {
   } | null>(null);
 
   // References
-  const mcpServerRef = useRef<OmniCareMcpServer>(new OmniCareMcpServer());
+  const mcpServerRef = useRef<TrueDoseMcpServer>(new TrueDoseMcpServer());
   const simHostRef = useRef<SimHost>(new SimHost(mcpServerRef.current));
   const beatsRef = useRef<BeatAction[]>([]);
   const autoPlayTimerRef = useRef<any>(null);

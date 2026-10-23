@@ -667,5 +667,3 @@ export class TrueDoseMcpServer {
   }
 }
 
-export { TrueDoseMcpServer as OmniCareMcpServer };
-

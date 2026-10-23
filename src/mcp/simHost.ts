@@ -1,5 +1,5 @@
 import { ScenarioId, SimEvent } from '../types';
-import { OmniCareMcpServer } from './server';
+import { TrueDoseMcpServer } from './server';
 
 export interface BeatAction {
   events: SimEvent[];
@@ -11,11 +11,11 @@ export interface BeatAction {
 }
 
 export class SimHost {
-  private mcp: OmniCareMcpServer;
+  private mcp: TrueDoseMcpServer;
   private seq = 0;
   private runId = 'run_1';
 
-  constructor(mcpServer: OmniCareMcpServer) {
+  constructor(mcpServer: TrueDoseMcpServer) {
     this.mcp = mcpServer;
   }
 

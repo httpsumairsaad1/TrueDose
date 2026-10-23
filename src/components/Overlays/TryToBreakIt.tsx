@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, ShieldAlert, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
-import { OmniCareMcpServer } from '../../mcp/server';
+import { TrueDoseMcpServer } from '../../mcp/server';
 import { verifyAuditChain } from '../../mcp/audit';
 
 interface TryToBreakItProps {
@@ -20,7 +20,7 @@ export const TryToBreakIt: React.FC<TryToBreakItProps> = ({ onClose, onApplyTamp
 
   const runDrill = async (drillId: number) => {
     setActiveDrill(drillId);
-    const testMcp = new OmniCareMcpServer();
+    const testMcp = new TrueDoseMcpServer();
 
     if (drillId === 1) {
       // 1. Ask without permission
